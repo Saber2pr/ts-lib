@@ -1,0 +1,20 @@
+{
+  "name": "@saber2pr/ts-lib",
+  "version": "0.0.1",
+  "description": "some ts type tools.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saber2pr/ts-lib.git"
+  },
+  "author": "saber2pr",
+  "license": "ISC",
+  "files": [
+    "lib/core/*",
+    "lib/index.*"
+  ],
+  "keywords": [
+    "typescript",
+    "tool"
+  ],
+  "main": "./lib/index"
+}
