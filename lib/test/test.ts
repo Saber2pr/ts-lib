@@ -16,7 +16,10 @@ import {
   DeleteKey,
   AddKey,
   Add,
-  Alter
+  Alter,
+  UnionToIntersection,
+  Shift,
+  Unshift
 } from '../core/saber-ts-lib'
 
 export namespace Test {
@@ -58,4 +61,13 @@ export namespace Test {
   type test_add1 = Add<Test, 'x', number>
 
   type test_alter = Alter<Test, 'b', Function>
+
+  type union = 'a' | 'b' | 'c'
+
+  type test_union = UnionToIntersection<union>
+
+  type tuple = ['a', 'b', 'c']
+
+  type test_shift = Shift<tuple>
+  type test_unshift = Unshift<tuple, 233>
 }

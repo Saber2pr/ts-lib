@@ -39,6 +39,26 @@ type result0 = Guard<Test, { a }> // never
 type result1 = Guard<Test, { _a }> // Test
 ```
 
+## UnionToIntersection
+
+并集变交集
+
+```ts
+type result = UnionToIntersection<'a' | 'b'> // "a" & "b"
+```
+
+## Shift
+
+```ts
+type result = Shift<['a', 'b', 'c']> // ["b", "c"]
+```
+
+## Unshift
+
+```ts
+type result = Unshift<['b', 'c'], 'a'> // ["a", "b", "c"]
+```
+
 ## AddKey
 
 获取一个类型的所有 key，并增加一个 key

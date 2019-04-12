@@ -71,3 +71,29 @@ export type Split<T, K extends keyof T = keyof T> = K extends any
  * if T has keyof Protect, then warn
  */
 export type Guard<T, Protect> = Exclude<T, Split<Protect>>
+/**
+ * convert a union type to intersection type: "a" | "b" -> "a" & "b"
+ */
+export type UnionToIntersection<U> = (U extends any
+  ? ((K: U) => void)
+  : never) extends (K: infer Result) => void
+  ? Result
+  : never
+/**
+ * remove the first type of tuple: ['a', 'b', 'c'] -> ["b", "c"]
+ */
+export type Shift<Tuple extends any[]> = ((...items: Tuple) => void) extends ((
+  first: any,
+  ...items: infer Result
+) => void)
+  ? Result
+  : never
+/**
+ * add a type before the tuple: <['b', 'c'], 'a'> -> ['a', 'b', 'c']
+ */
+type Unshift<Tuple extends any[], value> = ((
+  first: value,
+  ...items: Tuple
+) => void) extends ((...items: infer Result) => void)
+  ? Result
+  : never
