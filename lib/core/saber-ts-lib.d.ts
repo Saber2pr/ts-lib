@@ -2,7 +2,7 @@
  * @Author: saber2pr
  * @Date: 2019-04-12 18:32:37
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-12 18:38:06
+ * @Last Modified time: 2019-04-12 20:27:20
  */
 /**
  * add a key to keys
@@ -57,7 +57,7 @@ export type GetBooleanKeys<T> = {
 /**
  * Alter Target-K's type.
  */
-export type Alter<Target, K, T> = {
+export type Alter<Target, K extends keyof Target, T = any> = {
   [P in keyof Target]: P extends K ? T : Target[P]
 }
 /**

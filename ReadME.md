@@ -1,5 +1,7 @@
 # @saber2pr/ts-lib
 
+[![npm](https://img.shields.io/npm/v/@saber2pr/ts-lib.svg?color=blue)](https://www.npmjs.com/package/@saber2pr/ts-lib)
+
 > Typescript 工具泛型
 
 ```bash
