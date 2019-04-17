@@ -25,35 +25,27 @@ export type DeleteKey<T, K extends keyof T> = {
  */
 export type Delete<T, K extends keyof T> = Pick<T, DeleteKey<T, K>>
 /**
- * get the keys which extends Filter
+ * get the keys which type is Type
  */
-export type GetKeys<T, Filter = any> = {
-  [P in keyof T]: T[P] extends Filter ? P : never
+export type GetKeys<T, Type = any> = {
+  [P in keyof T]: T[P] extends Type ? P : never
 }[keyof T]
 /**
  * get the function keys of T
  */
-export type GetFunctionKeys<T> = {
-  [P in keyof T]: T[P] extends Function ? P : never
-}[keyof T]
+export type GetFunctionKeys<T> = GetKeys<T, Function>
 /**
  * get the string keys of T
  */
-export type GetStringKeys<T> = {
-  [P in keyof T]: T[P] extends String ? P : never
-}[keyof T]
+export type GetStringKeys<T> = GetKeys<T, String>
 /**
  * get the number keys of T
  */
-export type GetNumberKeys<T> = {
-  [P in keyof T]: T[P] extends Number ? P : never
-}[keyof T]
+export type GetNumberKeys<T> = GetKeys<T, Number>
 /**
  * get the boolean keys of T
  */
-export type GetBooleanKeys<T> = {
-  [P in keyof T]: T[P] extends Boolean ? P : never
-}[keyof T]
+export type GetBooleanKeys<T> = GetKeys<T, Boolean>
 /**
  * Alter Target-K's type.
  */
@@ -91,7 +83,7 @@ export type Shift<Tuple extends any[]> = ((...items: Tuple) => void) extends ((
 /**
  * add a type before the tuple: <['b', 'c'], 'a'> -> ['a', 'b', 'c']
  */
-type Unshift<Tuple extends any[], value> = ((
+export type Unshift<Tuple extends any[], value> = ((
   first: value,
   ...items: Tuple
 ) => void) extends ((...items: infer Result) => void)

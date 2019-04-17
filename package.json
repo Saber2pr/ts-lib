@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/ts-lib",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "some ts type tools.",
   "repository": {
     "type": "git",

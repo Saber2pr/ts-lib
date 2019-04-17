@@ -4,8 +4,8 @@
  * @Last Modified by: saber2pr
  * @Last Modified time: 2019-04-12 20:26:09
  */
-import { GetStringKeys } from '..'
 import {
+  GetStringKeys,
   Split,
   Guard,
   GetFunctionKeys,
@@ -20,7 +20,7 @@ import {
   UnionToIntersection,
   Shift,
   Unshift
-} from '../core/saber-ts-lib'
+} from '..'
 
 export namespace Test {
   type Test = {

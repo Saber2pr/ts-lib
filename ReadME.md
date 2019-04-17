@@ -128,7 +128,7 @@ type result = Alter<Test, 'a', Function> // {a:Function; b:number}
 
 ## GetKeys
 
-获取一个类型的所有 key，可设置过滤选项
+获取一个类型的所有 key，可设置指定类型
 
 ```ts
 type Test = {
@@ -138,8 +138,8 @@ type Test = {
 
 type result0 = GetKeys<Test> // "a" | "b"
 
-type result1 = GetKeys<Test, 'a'> // "b"
-type result2 = GetKeys<Test, 'a' | 'b'> // never
+type result1 = GetKeys<Test, String> // "a"
+type result2 = GetKeys<Test, Number> // "b"
 ```
 
 ## GetFunctionKeys
