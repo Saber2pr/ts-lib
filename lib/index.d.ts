@@ -1,1 +1,1 @@
-export * from './core/saber-ts-lib'
+export * from './core'
